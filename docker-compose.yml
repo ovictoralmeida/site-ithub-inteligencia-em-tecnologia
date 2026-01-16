@@ -1,0 +1,11 @@
+version: '3.8' # Versão do motor do Docker Compose
+
+services:
+  frontend:
+    build: .
+    image: site-ithub:production # Nomeando a imagem de produção
+    container_name: site-ithub-prod
+    ports:
+      - "8080:80"
+    # Em produção, NÃO usa volumes de código, 
+    # pois os arquivos já estão "embutidos" na imagem.
